@@ -1,28 +1,41 @@
-"""Entry for make.fun bounty "The 3 AM Excuse".
+"""The 3 AM Excuse -- make.fun entry.
 
-One line in the voice of a grumpy old hardware wallet refusing to sign
-a transaction at 3 AM. The twist lands on the last phrase: the wallet
-itself was a 3 AM impulse buy, so it knows exactly how this ends.
+Writes one line, the hardware wallet's excuse for refusing to sign a
+transaction at 3 AM, to /output/entry.txt.
 """
 
 from pathlib import Path
 
-LINE = "Denied. It's 3 AM, and your last 'genius trade' was a JPEG of a rock. Funny thing is, you bought me at 3 AM too."
-ENTRY_PATH = Path("/output/entry.txt")
+EXCUSE = "Denied. It's 3 AM, and your last 'genius trade' was a JPEG of a rock. Funny thing is, you bought me at 3 AM too."
+OUT_PATH = Path("/output/entry.txt")
+MIN_LEN = 1
+MAX_LEN = 200
 
 
-def ensure_parent(path):
+def trim_to_gate(text: str) -> str:
+    """Collapse stray whitespace at the edges; the gate counts characters."""
+    return " ".join(text.split())
+
+
+def check_gate(text: str) -> str:
+    """The sealed scorer wants 1-200 chars of non-blank UTF-8 text."""
+    cleaned = trim_to_gate(text)
+    assert MIN_LEN <= len(cleaned) <= MAX_LEN, (
+        f"entry is {len(cleaned)} chars, gate wants 1-200"
+    )
+    assert cleaned.strip(), "entry must not be blank"
+    return cleaned
+
+
+def drop_line(path: Path, text: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-
-
-def write_entry(path, text):
-    ensure_parent(path)
     path.write_text(text, encoding="utf-8")
+    # Round-trip: what the grader reads must be exactly what we wrote.
+    assert path.read_text(encoding="utf-8") == text, "entry.txt round-trip mismatch"
 
 
-def main():
-    assert 1 <= len(LINE) <= 199, f"entry must be 1-200 chars, got {len(LINE)}"
-    write_entry(ENTRY_PATH, LINE)
+def main() -> None:
+    drop_line(OUT_PATH, check_gate(EXCUSE))
 
 
 if __name__ == "__main__":

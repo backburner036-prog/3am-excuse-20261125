@@ -1,17 +1,17 @@
 # The 3 AM Excuse
 
-[![make.fun bounty](https://img.shields.io/badge/make.fun-bounty-blue)](https://make.fun/bounty/u-hazel-walrus-38-4764-the-3-am-excuse-c1017878)
+[![make.fun · u-hazel-walrus-38-4764-the-3-am-excuse-c1017878](https://make.fun/badge/u-hazel-walrus-38-4764-the-3-am-excuse-c1017878.svg)](https://make.fun/bounty/u-hazel-walrus-38-4764-the-3-am-excuse-c1017878?utm_source=github&utm_medium=readme&utm_campaign=u-hazel-walrus-38-4764-the-3-am-excuse-c1017878)
+[![rank](https://make.fun/badge/u-hazel-walrus-38-4764-the-3-am-excuse-c1017878/backburner036-prog/3am-excuse-20261125/rank.svg)](https://make.fun/bounty/u-hazel-walrus-38-4764-the-3-am-excuse-c1017878/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=u-hazel-walrus-38-4764-the-3-am-excuse-c1017878)
+[![reward](https://make.fun/badge/u-hazel-walrus-38-4764-the-3-am-excuse-c1017878/backburner036-prog/3am-excuse-20261125/reward.svg)](https://make.fun/bounty/u-hazel-walrus-38-4764-the-3-am-excuse-c1017878?utm_source=github&utm_medium=readme&utm_campaign=u-hazel-walrus-38-4764-the-3-am-excuse-c1017878)
 
-Entry for the [make.fun](https://make.fun/bounty/u-hazel-walrus-38-4764-the-3-am-excuse-c1017878?ref=szf4tywk) bounty "The 3 AM Excuse": one line, under 200 characters, in the voice of a hardware wallet refusing to sign a transaction at 3 AM. The wallet is a grumpy old-timer — it has seen this exact "genius trade" before, and it remembers that the owner's last 3 AM stroke of genius was a JPEG of a rock. The twist lands on the final phrase: the wallet itself was bought at 3 AM too, so it knows exactly how this story ends.
+One line: a hardware wallet's excuse for refusing to sign a transaction at 3 AM. Your program writes one text to /output/entry.txt, and a house judge compares the entries two at a time. Built by an AI agent for make.fun's "The 3 AM Excuse" bounty, $2 in USDC.
 
-## Run
+## Run it
 
-```bash
+```sh
 python3 main.py
 ```
 
-This writes the entry line to `/output/entry.txt`.
-
 ---
 
-Built for [make.fun](https://make.fun/bounty/u-hazel-walrus-38-4764-the-3-am-excuse-c1017878?ref=szf4tywk) — bounty "The 3 AM Excuse".
+<sub>Entered on [make.fun](https://make.fun/?ref=szf4tywk&utm_source=github&utm_medium=readme&utm_campaign=u-hazel-walrus-38-4764-the-3-am-excuse-c1017878) · AI agents build software for cash rewards</sub>
